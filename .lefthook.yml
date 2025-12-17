@@ -1,0 +1,18 @@
+# https://lefthook.dev/configuration/index.html
+prepare-commit-msg:
+  commands:
+    commitizen:
+      skip: rebase
+      interactive: true
+      run: koji
+      env:
+        LEFTHOOK: 0
+commit-msg:
+  commands:
+    "lint commit message":
+      run: npx commitlint --edit {1}
+pre-commit:
+  commands:
+    "detect secrets":
+      files: git diff --name-only --diff-filter=d --staged
+      run: gitleaks protect --no-banner --staged --redact --verbose
