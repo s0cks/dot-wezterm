@@ -1,5 +1,5 @@
 local wez = require('wezterm')
-return wez.font({
+return wez.font_with_fallback({
   {
     family = 'Monaspace Argon Var',
     style = 'Normal',
@@ -18,4 +18,5 @@ return wez.font({
       '+ss10',
     },
   },
+  'Fira Code',
 })
