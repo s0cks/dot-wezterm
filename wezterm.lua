@@ -11,4 +11,6 @@ config.color_scheme = 'flexoki-dark'
 config.default_prog = { '/opt/homebrew/bin/zellij', 'attach', 'main', '--create' }
 config.font = require('font')
 config.window_background_opacity = 0.7
+config.tab_bar_style = require('style/tab_bar')
+
 return config
