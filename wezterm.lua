@@ -17,4 +17,6 @@ local runtime_paths = {
 }
 package.path = package.path .. ';' .. (table.concat(runtime_paths, ';'))
 
+wt.on('update-status', require('update-status'))
+
 return require('config')
