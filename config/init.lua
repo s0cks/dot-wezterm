@@ -11,7 +11,7 @@ config.default_prog = {
   '--create',
 }
 config.font = require('font')
-config.window_background_opacity = 0.7
+-- config.window_background_opacity = 0.7
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.mouse_bindings = require('config.mouse_bindings')
