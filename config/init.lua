@@ -4,6 +4,7 @@ config.initial_cols = 120
 config.initial_rows = 28
 config.font_size = 14
 config.color_scheme = 'flexoki-dark'
+config.window_decorations = 'RESIZE'
 config.default_prog = {
   '/opt/homebrew/bin/zellij',
   'attach',
