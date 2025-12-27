@@ -1,7 +1,9 @@
 ---@author @s0cks
 ---@license MIT
 
-local wt = require('wezterm')
+local wt = require('wezterm') ---@type Wezterm
+print(package.path)
+
 local runtime_paths = {
   wt.home_dir .. '/.local/share/mise/installs/lua/5.2/luarocks/share/lua/5.2/?.lua',
   wt.home_dir .. '/.local/share/mise/installs/lua/5.2/luarocks/share/lua/5.2/?/init.lua',
@@ -17,6 +19,6 @@ local runtime_paths = {
 }
 package.path = package.path .. ';' .. (table.concat(runtime_paths, ';'))
 
-wt.on('update-status', require('update-status'))
+-- wt.on('update-status', require('update-status'))
 
 return require('config')
