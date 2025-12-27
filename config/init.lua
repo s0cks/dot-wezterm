@@ -10,12 +10,13 @@ config.cursor_blink_rate = 850
 config.default_cursor_style = 'BlinkingBlock'
 config.color_scheme = 'flexoki-dark'
 config.window_decorations = 'RESIZE'
-config.default_prog = {
-  '/opt/homebrew/bin/zellij',
-  'attach',
-  'main',
-  '--create',
-}
+-- config.default_prog = {
+--   '/opt/homebrew/bin/zellij',
+--   'attach',
+--   'main',
+--   '--create',
+-- }
+config.keys = require('config.keys')
 config.font = require('font')
 config.window_background_opacity = 1.0
 config.enable_tab_bar = true

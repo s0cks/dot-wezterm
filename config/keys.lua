@@ -1,2 +1,9 @@
 local mods = require('config.mods')
-return {}
+
+return {
+  {
+    key = 'S',
+    mods = 'ALT',
+    action = require('sessionizer').show(),
+  },
+}
