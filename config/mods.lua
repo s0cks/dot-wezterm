@@ -2,4 +2,5 @@ return {
   SUPER = 'SUPER',
   SUPER_CTRL = 'SUPER|CTRL',
   NONE = 'NONE',
+  HYPER = 'SHIFT|SUPER|CTRL|ALT',
 }
