@@ -4,10 +4,10 @@ local wez = require('wezterm')
 local plugin_require = wez.plugin.require
 
 local plugins = {
-  {
-    'https://github.com/sunbearc22/sb_show_wallpapers.wezterm.git',
-    require('plugins.wallpapers'),
-  },
+  -- {
+  --   'https://github.com/sunbearc22/sb_show_wallpapers.wezterm.git',
+  --   require('plugins.wallpapers'),
+  -- },
 }
 
 function M.apply_to_config(config)
