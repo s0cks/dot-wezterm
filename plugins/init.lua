@@ -12,7 +12,7 @@ local plugins = {
 
 function M.apply_to_config(config)
   for _, plugin in ipairs(plugins) do
-    plugin_require(plugin[0]).apply_to_config(config, plugin[1])
+    plugin_require(plugin[1]).apply_to_config(config, plugin[2])
   end
 end
 
