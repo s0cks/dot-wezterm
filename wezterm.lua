@@ -12,5 +12,6 @@ package.path = package.path .. ';' .. (table.concat(runtime_paths, ';'))
 print('package.path (after): ' .. package.path)
 
 local config = require('config')
+print('config: ' .. config)
 require('plugins').apply_to_config(config)
 return config
