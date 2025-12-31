@@ -1,6 +1,7 @@
 local wez = require('wezterm')
 
 wez.on('edit-scrollback', function(window, pane)
+  print('opening scrollback in neovim.....')
   local text = pane:get_lines_as_text(pane:get_dimensions().scrollback_rows)
   local name = os.tmpname()
   local f = io.open(name, 'w+')
