@@ -28,8 +28,6 @@ return {
   {
     key = 'E',
     mods = 'CTRL',
-    action = function(window, pane)
-      print('opening scrollback')
-    end,
+    action = wez.action.EmitEvent('edit-scrollback'),
   },
 }
