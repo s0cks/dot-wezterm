@@ -9,6 +9,7 @@ wez.on('edit-scrollback', function(window, pane)
     return
   end
 
+  print('opening wezterm scrollback in: ' .. name)
   f:write(text)
   f:flush()
   f:close()
