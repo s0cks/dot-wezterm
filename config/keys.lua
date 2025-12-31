@@ -1,4 +1,7 @@
 local wez = require('wezterm')
+local io = require('io')
+local os = require('os')
+local action = wez.action
 
 wez.on('edit-scrollback', function(window, pane)
   print('opening scrollback in neovim.....')
@@ -16,7 +19,7 @@ wez.on('edit-scrollback', function(window, pane)
   f:close()
 
   window.perform_action(
-    wez.action.SpawnCommandInNewWindow({
+    action.SpawnCommandInNewWindow({
       args = { 'nvim', name },
     }),
     pane
@@ -29,6 +32,6 @@ return {
   {
     key = 'E',
     mods = 'CTRL',
-    action = wez.action.EmitEvent('edit-scrollback'),
+    action = action.EmitEvent('edit-scrollback'),
   },
 }
