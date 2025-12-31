@@ -1,16 +1,33 @@
 local mods = require('config.mods')
 local wez = require('wezterm')
 
+wez.on('edit-scrollback', function(window, pane)
+  local text = pane:get_lines_as_text(pane:get_dimensions().scrollback_rows)
+  local name = os.tmpname()
+  local f = io.open(name, 'w+')
+  if not f then
+    print('failed to open scrollback: ' .. name)
+    return
+  end
+
+  f:write(text)
+  f:flush()
+  f:close()
+
+  window.perform_action(
+    wez.action.SpawnCommandInNewWindow({
+      args = { 'nvim', name },
+    }),
+    pane
+  )
+  wez.slep_ms(1000)
+  os.remove(name)
+end)
+
 return {
-  -- {
-  --   key = 'b',
-  --   mods = mods.HYPER,
-  --   action = wez.action_callback(function(window, pane)
-  --     if wez.GLOBAL.brightness == 0.0 then
-  --       wez.GLOBAL.brightness = 0.8
-  --     else
-  --       wez.GLOBAL.brightness = 0.0
-  --     end
-  --   end),
-  -- },
+  {
+    key = 'E',
+    mods = 'CTRL',
+    action = wez.action.EmitEvent('edit-scrollback'),
+  },
 }
