@@ -22,7 +22,7 @@ config.window_decorations = 'RESIZE'
 --   '--create',
 -- }
 config.keys = require('config.keys')
-print('keys: ' .. config.keys)
+print('keys: ' .. wez.to_string(config.keys))
 config.font = require('font')
 config.window_background_opacity = 1.0
 config.enable_tab_bar = true
